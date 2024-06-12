@@ -1,43 +1,46 @@
-package Materia;
+package Materia.Colas;
 
 import java.util.NoSuchElementException;
 
-import Materia.Models.NodoGenerico;
+import Materia.Models.Node;
 
-public class ColaGenerica<T> {
-    private NodoGenerico<T> first;
-    private NodoGenerico<T> last;
+public class Cola {
+    private Node first;
+    private Node last;
     private int tamanio;
 
-    public ColaGenerica() {
+    public Cola() {
         this.first = null;
         this.last = null;
         this.tamanio = 0;
     }
 
-    public void allNode(T data) {
-        NodoGenerico<T> nuevoNodo = new NodoGenerico<T>(data);
+    // Metodo para agregar un Node a la cola
+
+    public void addNode(int value) {
+        Node nuevoNode = new Node(value);
         if (isEmpty()) {
-            first = nuevoNodo;
-            last = nuevoNodo;
+            first = nuevoNode;
+            last = nuevoNode;
             tamanio++;
 
         } else {
-            last.next = nuevoNodo;
-            last = nuevoNodo;
+            last.next = nuevoNode;
+            last = nuevoNode;
             tamanio++;
+
         }
+
     }
 
-    public T remove() {
+    // metodo eliminar
+    public int remove() {
         if (isEmpty()) {
             throw new NoSuchElementException("La cola esta vacia");
-
         }
-        T value = first.data;
+        int value = first.value;
         first = first.next;
         tamanio--;
-
         if (first == null) {
             last = null;
 
@@ -45,22 +48,27 @@ public class ColaGenerica<T> {
         return value;
 
     }
+    // metodo para ver
 
-    public T peek() {
+    public int peek() {
         if (isEmpty()) {
             throw new NoSuchElementException("La cola esta vacia");
-
         }
-        return first.data;
+        return first.value;
 
     }
+    // metodo para verfificar si hay datos
 
     public boolean isEmpty() {
         return first == null;
     }
 
     public int size() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("La cola esta vacia");
+        }
         return tamanio;
+
     }
 
 }

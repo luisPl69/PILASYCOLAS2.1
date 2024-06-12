@@ -1,18 +1,20 @@
-## Getting Started
+# Proyecto de Estructuras de Datos
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Versión 2.0.2
 
-## Folder Structure
+[Estructuras Lineales – Ejercicio](https://github.com/tu_usuario/tu_repositorio/releases/tag/v2.0.2)
 
-The workspace contains two folders by default, where:
+### Descripción
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Esta versión incluye:
+- Clases para la implementación de colas.
+- Soluciones a los ejercicios relacionados con estructuras lineales.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Uso del Código para Cada Ejercicio
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+1. **Clases Cola**: Implementa las operaciones básicas de una cola (FIFO - First In First Out). Las clases proporcionan métodos para encolar (enqueue), desencolar (dequeue) y verificar si la cola está vacía.
+2. **Ejercicios**:
+   - **Ejercicio 1**: Implementar un algoritmo que determine si un String que contines los caracteres  '(', ')', '{', '}', '[' y '] es valido
+   - **Ejercicio 2**: Implementar un algoritmo que ordene un Stack de forma que los elementos más pequeños queden en el tope del Stack. Se permite usar un Stacks adicionales, pero no está permitido copiar los elementos a otra estructura de datos. listo ?
 
-## Dependency Management
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).

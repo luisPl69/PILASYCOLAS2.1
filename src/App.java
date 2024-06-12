@@ -2,13 +2,20 @@ import java.util.Stack;
 
 import Ejercicio1.ValidarSigno;
 import Ejercicio2.OrdenarStrack;
-import Materia.Cola;
-import Materia.ColaGenerica;
+import Ejercicio3.ListNode.LinkedList;
+import Materia.Colas.Cola;
+import Materia.Colas.ColaGenerica;
+import Materia.ListasEnlazadas.ListaEnlazada;
+import Materia.ListasEnlazadas.ListasEnlazadasGenericas;
 import Materia.Models.Pantalla;
 import Materia.Pilas.Pila;
 import Materia.Pilas.PilaGenerica;
 
 public class App {
+    /**
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         Pila pilita = new Pila();
@@ -47,7 +54,7 @@ public class App {
 
         // Retirar elementos de la cola
         System.out.println("Elemento retirado:-->" + queue.remove());// 10
-        System.out.println("Elemento del frente-->:" + queue.peek());// 10
+        System.out.println("Elemento del frente-->:" + queue.peek());// 20
 
         System.out.println("Elemento retirado:-->" + queue.remove());// 20
         System.out.println("Elemento del frente es:-->" + queue.peek());// 30
@@ -71,20 +78,16 @@ public class App {
         System.out.println("Estoy en la pantalla\n \t--->" + quColaGenerica.peek().getNombre());
         System.out.println("La cola tiene " + quColaGenerica.size() + " Numero de elementos");
 
-        // comprobamos el ejercicio 1 
+        // Comprobamos el ejercicio 1 
         ValidarSigno validador = new ValidarSigno();
         String inputString = "([]){}";
-        System.out.println(validador.esValido(inputString));
-        /// otro ejemplo 
-
+        System.out.println("El string " + inputString + " es válido: " + validador.esValido(inputString));
         
-
-
         ///////////////////////////////////////////////////////////////////////
 
-        //Ejercicio Segundo para ir comprobando  stac
+        // Ejercicio Segundo para ir comprobando stack
 
-        Stack<Integer>pilas =new Stack<>();
+        Stack<Integer> pilas = new Stack<>();
         pilas.push(5);
         pilas.push(1);
         pilas.push(4);
@@ -95,14 +98,42 @@ public class App {
         OrdenarStrack.ordenar(pilas);
 
         System.out.println("Pila después de ordenar: " + pilas);
+
+        // Usamos la lista enlazada aquí
+        ListaEnlazada lista = new ListaEnlazada();
+        lista.addNode(1);
+        lista.addNode(4);
+        lista.addNode(3);
+        lista.addNode(6);
+        lista.printList(); // Should print: 1 4 3 6
+        lista.deleteNode(1);
+        lista.printList(); // Should print: 4 3 6
+        lista.deleteNode(3);
+        lista.printList(); // Should print: 4 6
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////777
+        LinkedList myList = new LinkedList();
+        myList.add(1);
+        myList.add(2);
+        myList.add(5);
+        myList.add(7);
+        myList.add(6);
+
+        try {
+            int position = 1;
+            int result = myList.getByPos(position);
+            System.out.println("El nodo en la posición " + position + " desde el final es: " + result);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
-
-
-        
-
-
-    
-
-    
 }
 
+
+
+    
+          
+
+
+}
