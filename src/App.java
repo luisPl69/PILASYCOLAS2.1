@@ -2,20 +2,16 @@ import java.util.Stack;
 
 import Ejercicio1.ValidarSigno;
 import Ejercicio2.OrdenarStrack;
-import Ejercicio3.ListNode.LinkedList;
+import Ejercicio3.LinkedListEjr;
 import Materia.Colas.Cola;
 import Materia.Colas.ColaGenerica;
 import Materia.ListasEnlazadas.ListaEnlazada;
-import Materia.ListasEnlazadas.ListasEnlazadasGenericas;
 import Materia.Models.Pantalla;
 import Materia.Pilas.Pila;
 import Materia.Pilas.PilaGenerica;
 
 public class App {
-    /**
-     * @param args
-     * @throws Exception
-     */
+    
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         Pila pilita = new Pila();
@@ -113,21 +109,22 @@ public class App {
 
 
         ///////////////////////////////////////////////////////////////////////////////////////777
-        LinkedList myList = new LinkedList();
-        myList.add(1);
-        myList.add(2);
-        myList.add(5);
-        myList.add(7);
-        myList.add(6);
-
-        try {
-            int position = 1;
-            int result = myList.getByPos(position);
-            System.out.println("El nodo en la posición " + position + " desde el final es: " + result);
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+        LinkedListEjr ll = new LinkedListEjr();
+        ll.add(1);
+        ll.add(2);
+        ll.add(5);
+        ll.add(7);
+        ll.add(6);
+        
+        int n = 1; // Encontrar el nodo 1 desde el final
+        int result = ll.findNthNodeFromEnd(n);
+        if (result != -1) {
+            System.out.println("El nodo " + n + " desde el final es: " + result);
+        } else {
+            System.out.println("No se encontró el nodo " + n + " desde el final.");
         }
     }
+    
 }
 
 
@@ -136,4 +133,4 @@ public class App {
           
 
 
-}
+
